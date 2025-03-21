@@ -25,12 +25,3 @@ using std::to_string;
 using std::list;
 using std::deque;
 using std::find;
-
-struct Stud
-{
-    string vardas, pavarde;
-    vector<int> nd;
-    int egz;
-    double galutinisSuVidurkiu;
-    double galutinisSuMediana;
-};
