@@ -52,11 +52,11 @@ void ivedimas(Container &studentai, int &meniuPasirinkimas)
             naujasStudentas = false;
     }
 }
+
 template <typename Container>
 void nuskaitymasSuBuferiu(Container &studentai, string failoPavadinimas)
 {
     vector<string> laik;
-    Stud studentas;
     string eilute;
     stringstream buferis;
     ifstream fin;

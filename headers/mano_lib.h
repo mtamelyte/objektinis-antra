@@ -20,6 +20,7 @@ using namespace std::literals::chrono_literals;
 using std::ofstream;
 using std::ostringstream;
 using std::runtime_error;
+using std::istream;
 using std::ostream;
 using std::to_string;
 using std::list;
