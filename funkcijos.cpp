@@ -182,26 +182,6 @@ void pazymiuGeneravimas(Stud &laik)
     }
 }
 
-bool pagalVarda(Stud &a, Stud &b)
-{
-    return a.getVardas() < b.getVardas();
-}
-
-bool pagalPavarde(Stud &a, Stud &b)
-{
-    return b.getPavarde() > a.getPavarde();
-}
-
-bool pagalVidurki(Stud &a, Stud &b)
-{
-    return b.getGalutinisSuVidurkiu() < a.getGalutinisSuVidurkiu();
-}
-
-bool pagalMediana(Stud &a, Stud &b)
-{
-    return b.getGalutinisSuMediana() < a.getGalutinisSuMediana();
-}
-
 void testas(string failoPavadinimas)
 {
     vector<Stud> studentai;

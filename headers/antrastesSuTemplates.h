@@ -112,10 +112,10 @@ void nuskaitymasSuBuferiu(Container &studentai, string failoPavadinimas)
                 laikStudentas.setPazymys(skaicius);
             }
             laikStudentas.setEgzaminas(laikStudentas.getND().back());
-            laikStudentas.getND().pop_back();
+            laikStudentas.paskutinisPaz();
             laikStudentas.setGalutinisSuVidurkiu( (vidurkis(laikStudentas.getND()) * 0.4) + (laikStudentas.getEgzaminas() * 0.6));
             laikStudentas.setGalutinisSuMediana( (mediana(laikStudentas.getND()) * 0.4) + (laikStudentas.getEgzaminas() * 0.6));
-            studentai.push_back(std::move(laikStudentas));
+            studentai.push_back(laikStudentas);
         }
     }
 }
@@ -146,6 +146,21 @@ void isvedimas(Container &studentai, int galutinioBaloPasirinkimas, ostream &isv
 template <typename Container>
 void rusiavimas(Container &studentai, int pasirinkimas)
 {
+    auto pagalVarda = [](const Stud &a, const Stud &b){
+        return a.getVardas() < b.getVardas();
+    };
+    
+    auto pagalPavarde = [](const Stud &a, const Stud &b){
+        return b.getPavarde() > a.getPavarde();
+    };
+    
+    auto pagalVidurki = [](const Stud &a, const Stud &b){
+        return b.getGalutinisSuVidurkiu() < a.getGalutinisSuVidurkiu();
+    };
+    
+    auto pagalMediana = [](const Stud &a, const Stud &b){
+        return b.getGalutinisSuMediana() < a.getGalutinisSuMediana();
+    };
     if constexpr (std::is_same_v<Container, list<Stud>>)
     {
         if (pasirinkimas == 1)
